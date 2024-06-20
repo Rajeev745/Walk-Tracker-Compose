@@ -1,13 +1,22 @@
 package com.example.walktracker.presentation.input_details.components
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.walktracker.R
 import com.example.walktracker.presentation.Dimens
 import com.example.walktracker.presentation.input_details.InputFormEvents
 import com.example.walktracker.presentation.input_details.InputFormState
@@ -24,11 +33,13 @@ fun InputDetailsForm(
             .wrapContentHeight()
             .padding(top = Dimens.TopPaddingMedium)
     ) {
+
         InputField(
             label = "User Name",
             value = state.userName,
             onValueChange = { event(InputFormEvents.UserNameChanged(it)) },
-            isError = state.userNameError != null
+            isError = state.userNameError != null,
+            placeholder = stringResource(id = R.string.username_input)
         )
 
         InputField(
@@ -36,7 +47,8 @@ fun InputDetailsForm(
             value = state.weight,
             onValueChange = { event(InputFormEvents.UserWeightChanged(it)) },
             keyboardType = KeyboardType.Number,
-            isError = state.weightError != null
+            isError = state.weightError != null,
+            placeholder = stringResource(id = R.string.weight_input)
         )
 
         InputField(
@@ -44,7 +56,8 @@ fun InputDetailsForm(
             value = state.height,
             onValueChange = { event(InputFormEvents.UserHeightChanged(it)) },
             keyboardType = KeyboardType.Number,
-            isError = state.heightError != null
+            isError = state.heightError != null,
+            placeholder = stringResource(id = R.string.height_input)
         )
 
         InputField(
@@ -52,15 +65,14 @@ fun InputDetailsForm(
             value = state.age,
             onValueChange = { event(InputFormEvents.UserAgeChanged(it)) },
             keyboardType = KeyboardType.Number,
-            isError = state.ageError != null
+            isError = state.ageError != null,
+            placeholder = stringResource(id = R.string.age_input)
         )
 
-        InputField(label = "Gender",
-            value = if (state.gender == true) "Male" else "Female",
-            onValueChange = { event(InputFormEvents.UserAgeChanged(it)) },
-            isReadOnly = true,
-            isError = state.genderError != null,
-            onClick = { setBottomSheetVisible(true) })
+        GenderField(
+            label = "Gender",
+            value = "Male",
+            onClickListener = { setBottomSheetVisible(true) })
     }
 }
 

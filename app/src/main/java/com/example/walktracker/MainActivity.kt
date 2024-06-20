@@ -7,6 +7,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.walktracker.presentation.home_screen.RunScreen
 import com.example.walktracker.presentation.input_details.InputDetailScreen
 import com.example.walktracker.presentation.navigation.NavigationDestination
 import com.example.walktracker.presentation.onboarding.OnBoardingScreen
@@ -30,6 +31,9 @@ class MainActivity : ComponentActivity() {
                     }
                     composable<NavigationDestination.InputDetailScreen> {
                         InputDetailScreen()
+                    }
+                    composable<NavigationDestination.WalkTrackerScreen> {
+                        RunScreen(navController)
                     }
                 }
             }

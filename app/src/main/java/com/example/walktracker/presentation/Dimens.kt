@@ -20,6 +20,7 @@ object Dimens {
     val TopPaddingSmall = 15.dp
     val TopPaddingMedium = 25.dp
     val TopPaddingLarge = 35.dp
+    val TopPaddingExtraLarge = 50.dp
 
     val StartPaddingSmall = 15.dp
     val StartPaddingMedium = 25.dp
