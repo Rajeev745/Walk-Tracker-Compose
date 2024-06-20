@@ -20,6 +20,6 @@ fun BottomSection(content: @Composable () -> Unit) {
     ) {
         content()
 
-        Spacer(modifier = Modifier.height(Dimens.SpaceHeightExtraLarge))
+        Spacer(modifier = Modifier.height(Dimens.SpaceHeightSmall))
     }
 }

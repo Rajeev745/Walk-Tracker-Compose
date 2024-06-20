@@ -10,10 +10,11 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.Placeholder
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
-import com.example.walktracker.R
 import com.example.walktracker.presentation.Dimens
 import com.example.walktracker.presentation.common.CustomTextField
 
@@ -25,8 +26,7 @@ fun InputField(
     isError: Boolean = false,
     keyboardType: KeyboardType = KeyboardType.Text,
     imeAction: ImeAction = ImeAction.Done,
-    isReadOnly: Boolean = false,
-    onClick: () -> Unit = {},
+    placeholder: String,
 ) {
     Column(
         modifier = Modifier
@@ -35,8 +35,8 @@ fun InputField(
     ) {
         Text(
             text = label,
-            style = MaterialTheme.typography.bodyMedium,
-            color = colorResource(id = R.color.text_color)
+            style = MaterialTheme.typography.bodyLarge,
+            fontWeight = FontWeight.SemiBold
         )
 
         Spacer(modifier = Modifier.height(Dimens.SpaceHeightSmall))
@@ -46,8 +46,7 @@ fun InputField(
             onValueChange = onValueChange,
             isError = isError,
             keyboardOptions = KeyboardOptions(keyboardType = keyboardType, imeAction = imeAction),
-            readOnly = isReadOnly,
-            onClick = onClick
+            placeholder = placeholder
         )
 
         Spacer(modifier = Modifier.height(Dimens.SpaceHeightExtraLarge))

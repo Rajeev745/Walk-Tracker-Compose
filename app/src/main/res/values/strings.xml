@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">Walk Tracker</string>
     <string name="submit">Submit</string>
+    <string name="home">Home</string>
+    <string name="statistics">Statistics</string>
+    <string name="profile">Profile</string>
+    <string name="username_input">Please enter your username…</string>
+    <string name="age_input">Please enter your age…</string>
+    <string name="height_input">Please enter your height…</string>
+    <string name="weight_input">Please enter your weight…</string>
+    <string name="gender_input">Please enter your gender…</string>
+    <string name="user_details">User Details</string>
 </resources>

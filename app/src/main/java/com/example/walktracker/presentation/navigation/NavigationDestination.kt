@@ -7,4 +7,6 @@ sealed class NavigationDestination {
     data object Onboarding : NavigationDestination()
     @Serializable
     data object InputDetailScreen : NavigationDestination()
+    @Serializable
+    data object WalkTrackerScreen : NavigationDestination()
 }

@@ -1,6 +1,6 @@
 package com.example.walktracker.presentation.input_details.bottom_sheet
 
 enum class GenderOptions {
-    MALE,
-    FEMALE
+    Male,
+    Female
 }
