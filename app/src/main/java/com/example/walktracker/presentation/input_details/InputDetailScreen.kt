@@ -78,6 +78,7 @@ fun InputDetailScreen() {
         )
 
         GenderBottomSheet(
+            inputDetailViewModel::onEvent,
             isBottomSheetVisible = isBottomSheetVisible,
             sheetState = sheetState,
             onDismiss = {

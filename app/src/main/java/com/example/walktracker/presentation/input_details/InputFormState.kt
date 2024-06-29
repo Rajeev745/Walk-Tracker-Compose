@@ -9,6 +9,6 @@ data class InputFormState(
     val weightError: String? = null,
     val height: String = "",
     val heightError: String? = null,
-    val gender: Boolean? = null,
+    val gender: String = "Male",
     val genderError: String? = null
 )

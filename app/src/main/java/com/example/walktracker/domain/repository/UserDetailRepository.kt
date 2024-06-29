@@ -29,5 +29,5 @@ interface UserDetailRepository {
 
     fun getUserWeight(name: String): Flow<String>?
 
-    suspend fun getUserGender(name: String): Boolean?
+    suspend fun getUserGender(name: String): String?
 }

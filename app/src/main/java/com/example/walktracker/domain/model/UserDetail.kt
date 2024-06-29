@@ -11,5 +11,5 @@ data class UserDetail(
     val heightInCm: String? = "",
     val weightInKg: String? = "",
     val age: String? = "",
-    val gender: Boolean? = false
+    val gender: String? = ""
 )

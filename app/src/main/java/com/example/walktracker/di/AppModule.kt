@@ -9,6 +9,7 @@ import com.example.walktracker.data.repository.RunRepositoryImpl
 import com.example.walktracker.data.repository.UserDetailRepositoryImpl
 import com.example.walktracker.domain.repository.RunRepository
 import com.example.walktracker.domain.repository.UserDetailRepository
+import com.example.walktracker.domain.usecase.input_usecase.ValidateGenderUseCase
 import com.example.walktracker.domain.usecase.input_usecase.ValidateUserAgeUseCase
 import com.example.walktracker.domain.usecase.input_usecase.ValidateUserHeightUseCase
 import com.example.walktracker.domain.usecase.input_usecase.ValidateUserNameUseCase
@@ -57,7 +58,7 @@ object AppModule {
         @ApplicationContext app: Context,
     ) = Room.databaseBuilder(
         app, RunDatabase::class.java, RUNNING_DATABASE
-    ).build()
+    ).fallbackToDestructiveMigration().build()
 
     @Singleton
     @Provides
@@ -123,7 +124,8 @@ object AppModule {
             validateUserNameUseCase = ValidateUserNameUseCase(),
             validateUserAgeUseCase = ValidateUserAgeUseCase(),
             validateUserHeightUseCase = ValidateUserHeightUseCase(),
-            validateUserWeightUseCase = ValidateUserWeightUseCase()
+            validateUserWeightUseCase = ValidateUserWeightUseCase(),
+            validateGenderUseCase = ValidateGenderUseCase()
         )
     }
 }

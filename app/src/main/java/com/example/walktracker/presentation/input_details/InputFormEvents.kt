@@ -7,6 +7,7 @@ sealed class InputFormEvents {
     data class UserAgeChanged(val age: String) : InputFormEvents()
     data class UserHeightChanged(val height: String) : InputFormEvents()
     data class UserWeightChanged(val weight: String) : InputFormEvents()
+    data class UserGenderChanged(val gender: String) : InputFormEvents()
     object Submit : InputFormEvents()
 }
 

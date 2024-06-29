@@ -30,10 +30,12 @@ import com.example.walktracker.presentation.Dimens.MediumCornerRadius
 import com.example.walktracker.presentation.Dimens.SpaceHeightSmall
 import com.example.walktracker.presentation.Dimens.StartPaddingSmall
 import com.example.walktracker.presentation.Dimens.ZeroDp
+import com.example.walktracker.presentation.input_details.InputFormEvents
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun GenderBottomSheet(
+    event: (InputFormEvents) -> Unit,
     isBottomSheetVisible: Boolean,
     sheetState: SheetState,
     onDismiss: () -> Unit,
@@ -81,7 +83,11 @@ fun GenderBottomSheet(
                     ) {
                         RadioButton(
                             selected = selectedOption == option,
-                            onClick = { selectedOption = option },
+                            onClick = {
+                                selectedOption = option
+                                event(InputFormEvents.UserGenderChanged(option.name))
+                                onDismiss()
+                            },
                             modifier = Modifier.selectable(
                                 selected = selectedOption == option,
                                 onClick = { selectedOption = option }

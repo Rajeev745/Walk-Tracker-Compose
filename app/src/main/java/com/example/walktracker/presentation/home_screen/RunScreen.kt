@@ -15,27 +15,11 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 fun RunScreen(
     navController: NavController,
 ) {
-
-    val items = listOf(
-        HomeScreenBottomNav.Home,
-        HomeScreenBottomNav.Statistics,
-        HomeScreenBottomNav.Profile
-    )
-//
-//    Scaffold(
-//        bottomBar = {
-//            val navBackStackEntry by navController.currentBackStackEntryAsState()
-//            val currentDestination = navBackStackEntry?.destination
-//            items.forEach { item ->
-//
-//            }
-//        }
-//    ) {
-//
-//    }
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(color = MaterialTheme.colorScheme.background)
-    )
+    ) {
+        BottomNavigationBar()
+    }
 }

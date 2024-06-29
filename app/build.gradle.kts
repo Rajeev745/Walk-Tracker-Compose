@@ -134,6 +134,14 @@ dependencies {
     implementation("com.google.accompanist:accompanist-pager:0.26.5-rc")
     implementation("androidx.compose.ui:ui:1.6.8")
     implementation("androidx.compose.material:material:1.6.8")
+    implementation("androidx.compose.ui:ui-tooling:1.1.0-beta01")
+
+    // Google Maps Location Services
+    implementation("com.google.android.gms:play-services-location:21.0.1")
+    implementation("com.google.android.gms:play-services-maps:17.0.0")
+
+    implementation ("com.google.accompanist:accompanist-permissions:0.31.3-beta")
+    implementation("com.google.maps.android:maps-compose:2.9.0")
 
     // Navigation
     implementation(libs.navigation.compose)
