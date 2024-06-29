@@ -58,7 +58,7 @@ class UserDetailRepositoryImpl @Inject constructor(
         return userDetailDao.getUserWeight(name)
     }
 
-    override suspend fun getUserGender(name: String): Boolean? {
+    override suspend fun getUserGender(name: String): String? {
         return userDetailDao.getUserGender(name)
     }
 }

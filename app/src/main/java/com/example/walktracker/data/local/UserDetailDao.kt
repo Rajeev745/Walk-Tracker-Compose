@@ -49,5 +49,5 @@ interface UserDetailDao {
     fun getUserWeight(name: String): Flow<String>?
 
     @Query("SELECT gender FROM user_table WHERE name = :name")
-    suspend fun getUserGender(name: String): Boolean?
+    suspend fun getUserGender(name: String): String?
 }

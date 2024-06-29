@@ -44,7 +44,7 @@ fun CustomTextField(
             unfocusedTextColor = if (isSystemInDarkTheme()) Color.White else Color.Black,
             focusedContainerColor = colorResource(id = R.color.edit_text_background),
             unfocusedContainerColor = colorResource(id = R.color.edit_text_background),
-            cursorColor = Color.White,
+            cursorColor = if (isSystemInDarkTheme()) Color.White else Color.Black,
             focusedIndicatorColor = Color.Transparent,
             unfocusedIndicatorColor = Color.Transparent,
             disabledIndicatorColor = Color.Transparent,

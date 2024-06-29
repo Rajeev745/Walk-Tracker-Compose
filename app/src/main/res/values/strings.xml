@@ -10,4 +10,5 @@
     <string name="weight_input">Please enter your weight…</string>
     <string name="gender_input">Please enter your gender…</string>
     <string name="user_details">User Details</string>
+    <string name="google_maps_key">AIzaSyCSCrjcHpbbQdWVmaJ5kTr2u0sqGJNjL_U</string>
 </resources>

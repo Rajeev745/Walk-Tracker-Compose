@@ -8,7 +8,7 @@ import com.example.walktracker.domain.model.UserDetail
 
 @Database(
     entities = [Run::class, UserDetail::class],
-    version = 3,
+    version = 4,
     exportSchema = false
 )
 @TypeConverters(Converters::class)

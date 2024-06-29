@@ -1,6 +1,7 @@
 package com.example.walktracker.presentation
 
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 object Dimens {
 
@@ -44,6 +45,11 @@ object Dimens {
     val LargeCornerRadius = 35.dp
 
     val BorderWidth = 2.dp
+
+    val iconSize = 24.dp
+    val iconSizeLarge = 32.dp
+
+    val bottomNavTextSize = 14.sp
 
     val ZeroDp = 0.dp
 }

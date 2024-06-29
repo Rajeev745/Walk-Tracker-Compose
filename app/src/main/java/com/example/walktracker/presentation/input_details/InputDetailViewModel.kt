@@ -43,9 +43,14 @@ class InputDetailViewModel @Inject constructor(
                 state = state.copy(weight = event.weight)
             }
 
+            is InputFormEvents.UserGenderChanged -> {
+                state = state.copy(gender = event.gender)
+            }
+
             is InputFormEvents.Submit -> {
                 submitData()
             }
+
         }
     }
 
@@ -54,12 +59,14 @@ class InputDetailViewModel @Inject constructor(
         val userAgeResult = validateInputUseCase.validateUserAgeUseCase(state.age)
         val userHeightResult = validateInputUseCase.validateUserHeightUseCase(state.height)
         val userWeightResult = validateInputUseCase.validateUserWeightUseCase(state.weight)
+        val userGender = validateInputUseCase.validateGenderUseCase(state.gender)
 
         val hasError = listOf(
             userNameResult,
             userAgeResult,
             userHeightResult,
             userWeightResult,
+            userGender
         ).any { !it.isValid }
 
         if (hasError) {
@@ -67,7 +74,8 @@ class InputDetailViewModel @Inject constructor(
                 userNameError = userNameResult.errorMessage,
                 ageError = userAgeResult.errorMessage,
                 heightError = userHeightResult.errorMessage,
-                weightError = userWeightResult.errorMessage
+                weightError = userWeightResult.errorMessage,
+                genderError = userGender.errorMessage
             )
             return
         }
@@ -79,7 +87,7 @@ class InputDetailViewModel @Inject constructor(
                     age = state.age,
                     weightInKg = state.weight,
                     heightInCm = state.height,
-                    gender = false
+                    gender = state.gender
                 )
             )
         }

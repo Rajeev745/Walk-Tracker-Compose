@@ -71,7 +71,7 @@ fun InputDetailsForm(
 
         GenderField(
             label = "Gender",
-            value = "Male",
+            value = state.gender,
             onClickListener = { setBottomSheetVisible(true) })
     }
 }

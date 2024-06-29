@@ -9,8 +9,9 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="color_primary">#00a5ff</color>
-    <color name="button_color_one">#74e3fd</color>
-    <color name="button_color_two">#428eff</color>
+    <color name="button_color_one">#95E5F8</color>
+    <color name="button_color_two">#3285FF</color>
+    <color name="border_color">#0266F8</color>
     <color name="text_color">#163300</color>
     <color name="edit_text_background">#F9F5F6</color>
 </resources>
