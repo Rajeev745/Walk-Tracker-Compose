@@ -2,11 +2,14 @@ package com.example.walktracker.di
 
 import android.content.Context
 import androidx.room.Room
+import com.example.walktracker.data.local.LocationDao
 import com.example.walktracker.data.local.RunDao
 import com.example.walktracker.data.local.RunDatabase
 import com.example.walktracker.data.local.UserDetailDao
+import com.example.walktracker.data.repository.LocationRepositoryImpl
 import com.example.walktracker.data.repository.RunRepositoryImpl
 import com.example.walktracker.data.repository.UserDetailRepositoryImpl
+import com.example.walktracker.domain.repository.LocationRepository
 import com.example.walktracker.domain.repository.RunRepository
 import com.example.walktracker.domain.repository.UserDetailRepository
 import com.example.walktracker.domain.usecase.input_usecase.ValidateGenderUseCase
@@ -15,6 +18,9 @@ import com.example.walktracker.domain.usecase.input_usecase.ValidateUserHeightUs
 import com.example.walktracker.domain.usecase.input_usecase.ValidateUserNameUseCase
 import com.example.walktracker.domain.usecase.input_usecase.ValidateUserWeightUseCase
 import com.example.walktracker.domain.usecase.input_usecase.ValidationInputUseCase
+import com.example.walktracker.domain.usecase.location_usecase.GetAllLocationsUseCase
+import com.example.walktracker.domain.usecase.location_usecase.InsertLocationUseCase
+import com.example.walktracker.domain.usecase.location_usecase.SaveLocationUseCase
 import com.example.walktracker.domain.usecase.run_usecase.DeleteRunUseCase
 import com.example.walktracker.domain.usecase.run_usecase.GetAllRunsSortedByAvgSpeedUseCase
 import com.example.walktracker.domain.usecase.run_usecase.GetAllRunsSortedByCaloriesBurnedUseCase
@@ -74,8 +80,18 @@ object AppModule {
 
     @Singleton
     @Provides
+    fun provideLocationDao(runDatabase: RunDatabase) = runDatabase.getLocationDao()
+
+    @Singleton
+    @Provides
     fun provideUserRepository(userDetailsDao: UserDetailDao): UserDetailRepository {
         return UserDetailRepositoryImpl(userDetailsDao)
+    }
+
+    @Singleton
+    @Provides
+    fun provideLocationRepository(locationDao: LocationDao): LocationRepository {
+        return LocationRepositoryImpl(locationDao)
     }
 
     @Singleton
@@ -126,6 +142,15 @@ object AppModule {
             validateUserHeightUseCase = ValidateUserHeightUseCase(),
             validateUserWeightUseCase = ValidateUserWeightUseCase(),
             validateGenderUseCase = ValidateGenderUseCase()
+        )
+    }
+
+    @Singleton
+    @Provides
+    fun provideLocationUseCase(locationRepository: LocationRepository): SaveLocationUseCase {
+        return SaveLocationUseCase(
+            insertLocationUseCase = InsertLocationUseCase(locationRepository),
+            getAllLocationsUseCase = GetAllLocationsUseCase(locationRepository)
         )
     }
 }

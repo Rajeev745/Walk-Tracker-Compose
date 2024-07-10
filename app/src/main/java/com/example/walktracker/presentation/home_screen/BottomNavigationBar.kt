@@ -1,5 +1,6 @@
 package com.example.walktracker.presentation.home_screen
 
+import androidx.activity.compose.ManagedActivityResultLauncher
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -30,7 +31,7 @@ import com.example.walktracker.presentation.navigation.NavigationDestination
 import com.example.walktracker.presentation.tracking.TrackingScreen
 
 @Composable
-fun BottomNavigationBar() {
+fun BottomNavigationBar(cameraPermissionResultLauncher: ManagedActivityResultLauncher<String, Boolean>) {
 
     val navController = rememberNavController()
 
@@ -79,7 +80,7 @@ fun BottomNavigationBar() {
                 ProfileScreen(navController)
             }
             composable<NavigationDestination.TrackingScreen> {
-                TrackingScreen(navController) // Your tracking screen implementation
+                TrackingScreen(navController, cameraPermissionResultLauncher) // Your tracking screen implementation
             }
         }
     }
