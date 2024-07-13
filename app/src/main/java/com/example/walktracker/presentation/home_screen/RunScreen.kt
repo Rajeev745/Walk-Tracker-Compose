@@ -1,24 +1,19 @@
 package com.example.walktracker.presentation.home_screen
 
-import androidx.activity.compose.ManagedActivityResultLauncher
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavController
 
 @Composable
-fun RunScreen(
-    navController: NavController,
-    cameraPermissionResultLauncher: ManagedActivityResultLauncher<String, Boolean>,
-) {
+fun RunScreen() {
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(color = MaterialTheme.colorScheme.background)
     ) {
-        BottomNavigationBar(cameraPermissionResultLauncher)
+        BottomNavigationBar()
     }
 }
