@@ -142,9 +142,9 @@ dependencies {
 
     implementation ("com.google.accompanist:accompanist-permissions:0.31.3-beta")
     implementation("com.google.maps.android:maps-compose:2.9.0")
-    implementation("androidx.work:work-runtime-ktx:2.7.1")
 
-    implementation("pub.devrel:easypermissions:3.0.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.4.0")
+    implementation("androidx.lifecycle:lifecycle-service:2.4.0")
 
     // Navigation
     implementation(libs.navigation.compose)
