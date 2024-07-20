@@ -35,22 +35,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.lerp
-import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.walktracker.R
 import com.example.walktracker.domain.model.onboarding.onBoardingList
 import com.example.walktracker.presentation.Dimens
-import com.example.walktracker.presentation.Dimens.BottomPaddingLarge
-import com.example.walktracker.presentation.Dimens.ButtonHeight
 import com.example.walktracker.presentation.Dimens.SpaceHeightExtraLarge
-import com.example.walktracker.presentation.Dimens.SpaceHeightLarge
-import com.example.walktracker.presentation.Dimens.SpaceHeightMedium
 import com.example.walktracker.presentation.common.WalkButton
-import com.example.walktracker.presentation.navigation.NavigationDestination
 import kotlinx.coroutines.launch
 
 @Composable
-fun OnBoardingScreen(navController: NavController) {
+fun OnBoardingScreen(navigation: () -> Unit) {
 
     Column(
         modifier = Modifier
@@ -91,7 +85,7 @@ fun OnBoardingScreen(navController: NavController) {
                     modifier = Modifier
                         .fillMaxWidth()
                         .fillMaxHeight(0.6f)
-                        .clip(RoundedCornerShape(Dimens.MediumCornerRadius))
+                        .clip(RoundedCornerShape(Dimens.MediumCardCornerRadius))
                         .graphicsLayer {
                             val pageOffset =
                                 ((pagerState.currentPage - page) + pagerState.currentPageOffsetFraction)
@@ -118,7 +112,7 @@ fun OnBoardingScreen(navController: NavController) {
 
             Text(
                 text = onBoardingList[pagerState.currentPage].title,
-                modifier = Modifier.padding(Dimens.TextPaddingMedium),
+                modifier = Modifier.padding(Dimens.paddingMedium),
                 style = MaterialTheme.typography.displaySmall.copy(fontWeight = FontWeight.Bold),
                 color = colorResource(id = R.color.text_color)
             )
@@ -147,7 +141,7 @@ fun OnBoardingScreen(navController: NavController) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .wrapContentHeight()
-                    .padding(BottomPaddingLarge),
+                    .padding(Dimens.paddingLarge),
                 horizontalArrangement = Arrangement.End
             ) {
                 val buttonScope = rememberCoroutineScope()
@@ -161,30 +155,21 @@ fun OnBoardingScreen(navController: NavController) {
                         text = buttonState.value[0],
                         modifier = Modifier
                             .padding(end = 16.dp)
-                            .height(ButtonHeight)
+                            .height(Dimens.MediumButtonHeight)
                     )
                 }
                 WalkButton(
                     onClick = {
                         buttonScope.launch {
                             if (pagerState.currentPage == 2) {
-                                navController.navigate(NavigationDestination.InputDetailScreen)
+                                // TODO: Navigate to different screen.
                             } else {
                                 pagerState.animateScrollToPage(page = pagerState.currentPage + 1)
                             }
                         }
-                    }, text = buttonState.value[1], modifier = Modifier.height(ButtonHeight)
+                    }, text = buttonState.value[1], modifier = Modifier.height(Dimens.MediumButtonHeight)
                 )
             }
         }
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun OnBoardingScreenPreview() {
-    MaterialTheme {
-        val navController = rememberNavController()
-        OnBoardingScreen(navController = navController)
     }
 }

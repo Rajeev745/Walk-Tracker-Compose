@@ -31,7 +31,7 @@ fun InputField(
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = Dimens.HorizontalPaddingMedium)
+            .padding(horizontal = Dimens.paddingMedium)
     ) {
         Text(
             text = label,

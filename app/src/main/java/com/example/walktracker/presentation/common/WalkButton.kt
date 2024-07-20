@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import com.example.walktracker.presentation.Dimens.CornerRadius
+import com.example.walktracker.presentation.Dimens
 
 @Composable
 fun WalkButton(onClick: () -> Unit, text: String, modifier: Modifier = Modifier) {
@@ -21,7 +21,7 @@ fun WalkButton(onClick: () -> Unit, text: String, modifier: Modifier = Modifier)
             containerColor = MaterialTheme.colorScheme.secondary,
             contentColor = Color.White
         ),
-        shape = RoundedCornerShape(CornerRadius)
+        shape = RoundedCornerShape(Dimens.LargeCardCornerRadius)
     ) {
         Text(
             text = text,
@@ -30,5 +30,4 @@ fun WalkButton(onClick: () -> Unit, text: String, modifier: Modifier = Modifier)
             ),
         )
     }
-
 }

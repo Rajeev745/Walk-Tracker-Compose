@@ -31,7 +31,7 @@ fun InputDetailsForm(
         modifier = Modifier
             .fillMaxWidth()
             .wrapContentHeight()
-            .padding(top = Dimens.TopPaddingMedium)
+            .padding(top = Dimens.paddingMedium)
     ) {
 
         InputField(

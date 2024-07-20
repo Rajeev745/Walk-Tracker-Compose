@@ -25,10 +25,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
-import com.example.walktracker.presentation.Dimens.BottomPaddingLarge
-import com.example.walktracker.presentation.Dimens.MediumCornerRadius
+import com.example.walktracker.presentation.Dimens
 import com.example.walktracker.presentation.Dimens.SpaceHeightSmall
-import com.example.walktracker.presentation.Dimens.StartPaddingSmall
 import com.example.walktracker.presentation.Dimens.ZeroDp
 import com.example.walktracker.presentation.input_details.InputFormEvents
 
@@ -43,7 +41,7 @@ fun GenderBottomSheet(
 
     if (isBottomSheetVisible) {
         ModalBottomSheet(
-            shape = RoundedCornerShape(topStart = MediumCornerRadius, topEnd = MediumCornerRadius),
+            shape = RoundedCornerShape(topStart = Dimens.MediumCardCornerRadius, topEnd = Dimens.MediumCardCornerRadius),
             onDismissRequest = onDismiss,
             sheetState = sheetState,
             dragHandle = { BottomSheetDefaults.DragHandle() }) {
@@ -53,9 +51,9 @@ fun GenderBottomSheet(
 
             Column(
                 modifier = Modifier.padding(
-                    bottom = BottomPaddingLarge,
-                    start = StartPaddingSmall,
-                    end = StartPaddingSmall
+                    bottom = Dimens.paddingExtraLarge,
+                    start = Dimens.paddingMedium,
+                    end = Dimens.paddingMedium
                 )
             ) {
 
@@ -63,7 +61,7 @@ fun GenderBottomSheet(
                     text = "Select Gender",
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(vertical = StartPaddingSmall),
+                        .padding(vertical = Dimens.paddingMedium),
                     style = MaterialTheme.typography.headlineMedium,
                 )
                 options.forEach { option ->
@@ -73,12 +71,12 @@ fun GenderBottomSheet(
                             .wrapContentHeight()
                             .background(
                                 color = MaterialTheme.colorScheme.background,
-                                shape = RoundedCornerShape(MediumCornerRadius)
+                                shape = RoundedCornerShape(Dimens.MediumCardCornerRadius)
                             )
                             .border(
                                 width = ZeroDp,
                                 color = MaterialTheme.colorScheme.background,
-                                shape = RoundedCornerShape(MediumCornerRadius)
+                                shape = RoundedCornerShape(Dimens.MediumCardCornerRadius)
                             )
                     ) {
                         RadioButton(
@@ -94,7 +92,7 @@ fun GenderBottomSheet(
                             ),
                         )
                         Text(
-                            modifier = Modifier.padding(vertical = StartPaddingSmall),
+                            modifier = Modifier.padding(vertical = Dimens.paddingMedium),
                             text = option.name,
                             style = MaterialTheme.typography.bodyMedium,
                             fontWeight = FontWeight.SemiBold

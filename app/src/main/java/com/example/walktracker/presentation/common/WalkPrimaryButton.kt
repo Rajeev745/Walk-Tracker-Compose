@@ -18,8 +18,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
 import com.example.walktracker.R
-import com.example.walktracker.presentation.Dimens.ButtonHeight
-import com.example.walktracker.presentation.Dimens.CornerRadius
+import com.example.walktracker.presentation.Dimens
 import com.example.walktracker.presentation.Dimens.ZeroDp
 
 @Composable
@@ -29,9 +28,9 @@ fun WalkPrimaryButton(onClick: () -> Unit, text: String) {
         onClick = onClick,
         modifier = Modifier
             .fillMaxWidth(0.9f)
-            .height(ButtonHeight)
+            .height(Dimens.LargeButtonHeight)
             .background(Color.Transparent),
-        shape = RoundedCornerShape(CornerRadius),
+        shape = RoundedCornerShape(Dimens.MediumCardCornerRadius),
         contentPadding = PaddingValues(ZeroDp)
     ) {
         Box(

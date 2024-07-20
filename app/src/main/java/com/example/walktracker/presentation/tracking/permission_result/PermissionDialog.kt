@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import com.example.walktracker.presentation.Dimens.TopPaddingSmall
+import com.example.walktracker.presentation.Dimens
 
 @Composable
 fun PermissionDialog(
@@ -45,7 +45,7 @@ fun PermissionDialog(
                                 onOkClick()
                             }
                         }
-                        .padding(TopPaddingSmall)
+                        .padding(Dimens.paddingMedium)
                 )
             }
         },
