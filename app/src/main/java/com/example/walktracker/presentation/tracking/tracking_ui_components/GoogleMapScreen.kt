@@ -1,6 +1,5 @@
-package com.example.walktracker.presentation.tracking
+package com.example.walktracker.presentation.tracking.tracking_ui_components
 
-import android.content.Intent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -10,8 +9,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import com.example.walktracker.R
-import com.example.walktracker.location.LocationService
-import com.example.walktracker.utils.CONSTANTS.START_SERVICE
 import com.example.walktracker.utils.Utilities
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng

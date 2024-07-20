@@ -1,5 +1,7 @@
 package com.example.walktracker.presentation.home_screen
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -29,6 +31,7 @@ import com.example.walktracker.presentation.navigation.BottomNavigationItem
 import com.example.walktracker.presentation.navigation.NavigationDestination
 import com.example.walktracker.presentation.tracking.TrackingScreen
 
+@RequiresApi(Build.VERSION_CODES.Q)
 @Composable
 fun BottomNavigationBar() {
 
