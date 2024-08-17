@@ -10,13 +10,11 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavController
-import com.example.walktracker.presentation.Dimens.TopPaddingExtraLarge
+import com.example.walktracker.presentation.Dimens
 import com.example.walktracker.presentation.common.StartTrackButton
-import com.example.walktracker.presentation.navigation.NavigationDestination
 
 @Composable
-fun HomeScreen(navController: NavController) {
+fun HomeScreen(navigation: () -> Unit) {
 
     Column(
         modifier = Modifier
@@ -28,13 +26,11 @@ fun HomeScreen(navController: NavController) {
         Spacer(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(TopPaddingExtraLarge)
+                .height(Dimens.SpaceHeightExtraLarge)
         )
 
         StartTrackButton(
-            onClick = {
-                navController.navigate(NavigationDestination.TrackingScreen)
-            },
+            onClick = { navigation() },
             text = "START"
         )
     }

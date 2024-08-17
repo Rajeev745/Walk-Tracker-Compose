@@ -24,7 +24,6 @@ import androidx.compose.ui.text.font.FontWeight
 import com.example.walktracker.R
 import com.example.walktracker.presentation.Dimens
 import com.example.walktracker.presentation.Dimens.EditTextHeight
-import com.example.walktracker.presentation.Dimens.StartPaddingSmall
 import com.example.walktracker.presentation.Dimens.ZeroDp
 
 @Composable
@@ -37,7 +36,7 @@ fun GenderField(
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = Dimens.HorizontalPaddingMedium)
+            .padding(horizontal = Dimens.paddingMedium)
     ) {
         Text(
             text = label,
@@ -51,11 +50,11 @@ fun GenderField(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(EditTextHeight)
-                .background(color = colorResource(id = R.color.edit_text_background), shape = RoundedCornerShape(Dimens.MediumCornerRadius))
+                .background(color = colorResource(id = R.color.edit_text_background), shape = RoundedCornerShape(Dimens.MediumCardCornerRadius))
                 .border(
                     width = ZeroDp,
                     color = Color.Transparent,
-                    shape = RoundedCornerShape(Dimens.MediumCornerRadius)
+                    shape = RoundedCornerShape(Dimens.MediumCardCornerRadius)
                 )
                 .clickable { onClickListener() },
             verticalAlignment = Alignment.CenterVertically, // Center vertically
@@ -67,7 +66,7 @@ fun GenderField(
                 modifier = Modifier
                     .fillMaxWidth()
                     .wrapContentHeight()
-                    .padding(start = StartPaddingSmall),
+                    .padding(start = Dimens.paddingMedium),
                 style = MaterialTheme.typography.bodyMedium,
                 color = if (isSystemInDarkTheme()) Color.White else Color.Black
             )

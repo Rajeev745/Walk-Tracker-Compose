@@ -43,7 +43,7 @@ fun InputDetailCard(
             fontWeight = FontWeight.Bold,
             modifier = Modifier
                 .align(Alignment.TopCenter)
-                .padding(top = Dimens.TopPaddingMedium)
+                .padding(top = Dimens.paddingLarge)
         )
 
         Card(
@@ -53,7 +53,7 @@ fun InputDetailCard(
                 .align(Alignment.Center)
                 .background(
                     color = MaterialTheme.colorScheme.background,
-                    shape = RoundedCornerShape(Dimens.CornerRadius)
+                    shape = RoundedCornerShape(Dimens.MediumCardCornerRadius)
                 ),
         ) {
 
@@ -62,7 +62,7 @@ fun InputDetailCard(
                     .fillMaxSize()
                     .background(
                         color = MaterialTheme.colorScheme.background,
-                        shape = RoundedCornerShape(Dimens.CornerRadius)
+                        shape = RoundedCornerShape(Dimens.MediumCardCornerRadius)
                     ),
                 verticalArrangement = Arrangement.SpaceAround
             ) {

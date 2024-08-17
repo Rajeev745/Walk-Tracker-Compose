@@ -4,28 +4,28 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 object Dimens {
+    val ZeroDp = 0.dp
 
-    // Height
-    val VerticalSpaceHeightMedium = 15.dp
+    // Button radius
+    val SmallCornerButtonRadius = 4.dp
+    val MediumCornerButtonRadius = 8.dp
+    val LargeCornerButtonRadius = 16.dp
 
-    // Text Padding
-    val TextPaddingMedium = 15.dp
+    // Button Heights
+    val SmallButtonHeight = 36.dp
+    val MediumButtonHeight = 48.dp
+    val LargeButtonHeight = 56.dp
 
-    // Horizontal Padding
-    val HorizontalPaddingMedium = 15.dp
+    // Padding
+    val paddingSmall = 5.dp
+    val paddingMedium = 15.dp
+    val paddingLarge = 25.dp
+    val paddingExtraLarge = 35.dp
 
-    val BottomPaddingSmall = 15.dp
-    val BottomPaddingMedium = 25.dp
-    val BottomPaddingLarge = 35.dp
-
-    val TopPaddingSmall = 15.dp
-    val TopPaddingMedium = 25.dp
-    val TopPaddingLarge = 35.dp
-    val TopPaddingExtraLarge = 50.dp
-
-    val StartPaddingSmall = 15.dp
-    val StartPaddingMedium = 25.dp
-    val StartPaddingLarge = 35.dp
+    // Card Corner Radii
+    val SmallCardCornerRadius = 8.dp
+    val MediumCardCornerRadius = 12.dp
+    val LargeCardCornerRadius = 16.dp
 
     // Space Height
     val SpaceHeightSmall = 5.dp
@@ -33,23 +33,15 @@ object Dimens {
     val SpaceHeightLarge = 15.dp
     val SpaceHeightExtraLarge = 25.dp
 
-    // Button Height
-    val ButtonHeight = 50.dp
+    // Corner radius
+    val smallCornerRadius = 15.dp
+    val mediumCornerRadius = 25.dp
+    val largeCornerRadius = 40.dp
+    val extraLargeCornerRadius = 50.dp
 
-    // Edit text height
-    val EditTextHeight = 48.dp
+    // Other Dimensions
+    val SIXTY_DP = 60.dp
 
-    // Button Radius
-    val CornerRadius = 15.dp
-    val MediumCornerRadius = 25.dp
-    val LargeCornerRadius = 35.dp
-
-    val BorderWidth = 2.dp
-
-    val iconSize = 24.dp
-    val iconSizeLarge = 32.dp
-
-    val bottomNavTextSize = 14.sp
-
-    val ZeroDp = 0.dp
+    // EditText Height
+    val EditTextHeight = 50.dp
 }

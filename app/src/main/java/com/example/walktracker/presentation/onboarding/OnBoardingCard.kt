@@ -31,10 +31,9 @@ fun OnBoardingCard(onBoardingModel: OnBoardingModel) {
                 .border(
                     width = Dimens.ZeroDp,
                     color = Color.Transparent,
-                    shape = RoundedCornerShape(Dimens.MediumCornerRadius)
+                    shape = RoundedCornerShape(Dimens.MediumCardCornerRadius)
                 ),
             contentScale = ContentScale.Crop
         )
-
     }
 }

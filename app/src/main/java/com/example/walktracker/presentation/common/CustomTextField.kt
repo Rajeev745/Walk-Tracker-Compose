@@ -50,7 +50,7 @@ fun CustomTextField(
             disabledIndicatorColor = Color.Transparent,
             errorIndicatorColor = MaterialTheme.colorScheme.error
         ),
-        shape = RoundedCornerShape(Dimens.MediumCornerRadius),
+        shape = RoundedCornerShape(Dimens.MediumCardCornerRadius),
         singleLine = true
     )
 }

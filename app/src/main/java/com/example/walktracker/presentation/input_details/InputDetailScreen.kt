@@ -20,13 +20,14 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavHostController
 import com.example.walktracker.presentation.input_details.bottom_sheet.GenderBottomSheet
 import com.example.walktracker.presentation.input_details.components.InputDetailCard
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun InputDetailScreen() {
+fun InputDetailScreen(navigation: () -> Unit, navController: NavHostController) {
 
     val inputDetailViewModel: InputDetailViewModel = hiltViewModel()
 
@@ -87,10 +88,4 @@ fun InputDetailScreen() {
             }
         )
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun PreviewInputDetailScreen() {
-    InputDetailScreen()
 }
